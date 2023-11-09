@@ -1,0 +1,24 @@
+{
+    "name": "rsthn/rose-ext-angela",
+    "description": "Angela Encryption Extension",
+    "type": "rose-extension",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Jonathan Palencia",
+            "email": "strikeone88@rsthn.com"
+        }
+    ],
+    "extra": {
+        "rose-ext-identifier": "Angela"
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "rsthn/rose-extension-installer": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rose\\Ext\\Angela\\": "."
+        }
+    }
+}
