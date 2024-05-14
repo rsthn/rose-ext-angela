@@ -10,6 +10,8 @@ use Rose\Math;
 use Rose\Expr;
 use Rose\Arry;
 
+// @title Angela Encryption Extension
+
 class Angela
 {
     private static $consts = null;
@@ -279,17 +281,23 @@ class Angela
 };
 
 /**
- * Encrypts the specified text using Angela.
- * (eax::encrypt <key> <plainText>)
+ * Encrypts the specified buffer using Angela.
+ * @code (`eax:encrypt` <key> <plain-text>)
+ * @example
+ * (eax:encrypt 'hello_world' 'my_plain_text')
+ * ; (bytes)
  */
-Expr::register('eax::encrypt', function ($args) {
+Expr::register('eax:encrypt', function ($args) {
     return Angela::encrypt($args->get(1), $args->get(2));
 });
 
 /**
- * Decrypts the specified cypher using Angela.
- * (eax::decrypt <key> <cypherText>)
+ * Decrypts the specified cipher using Angela.
+ * @code (`eax:decrypt` <key> <cipher-text>)
+ * @example
+ * (eax:decrypt 'hello_world' (eax:encrypt 'hello_world' 'my_plain_text'))
+ * ; my_plain_text
  */
-Expr::register('eax::decrypt', function ($args) {
+Expr::register('eax:decrypt', function ($args) {
     return Angela::decrypt($args->get(1), $args->get(2));
 });
